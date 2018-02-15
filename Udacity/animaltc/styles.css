@@ -1,0 +1,86 @@
+body{
+    background-color: black;
+}
+.wrapper{
+    font-family: 'Raleway', sans-serif;
+	width:320px;
+	margin:0 auto;
+	text-align: center;
+    color:white;
+    font-size:18px;
+}
+.card{
+	width:340px;
+	margin: 0 auto;
+	border:5px solid rgb(0, 0, 51);
+	border-radius: 10px;
+	background-color: rgb(64, 64, 64);
+}
+.card__header{
+	font-size:25px;
+    border-left:2px solid white;
+    border-right:2px solid white;
+}
+.card__header:hover{
+    color:#525c65;
+    background-color: #02b3e4;
+    border-right-color:#525c65;
+    border-left-color:#525c65;
+}
+.logan{
+	width:300px;
+	height:200px;
+	border-radius: 8px;
+	margin:0 auto;
+    border:1px solid lightslategrey;
+}
+.logan:hover{
+    border-color:#02b3e4;
+}
+.animal_facts{
+    width:320px;
+    margin:0 auto;
+	padding-left:0;
+	list-style-type: none;
+	text-align: left;
+	font-size:17px;
+	margin-top:20px;
+	margin-bottom: 20px;
+	line-height: 30px;
+}
+.animal_fact{
+    display: block;
+    border-bottom: 1px solid white;
+    border-radius:5px;
+}
+.animal_fact:hover{
+    border-color:#02b3e4;
+}
+.animal_facts:last-child{
+    margin-top:20px;
+}
+
+.animal_fact >span {
+	display:inline-block;
+    vertical-align: top;
+}
+
+.fact_item{
+    font-weight: 800;
+    text-align: left;
+    width:45%
+}
+.fact_data{
+    text-align: right;
+    width:45%
+}
+.italic{
+	font-style: italic;
+	width:270px;
+	margin:0 auto;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.common_text{
+    border-top:2px solid white;
+}

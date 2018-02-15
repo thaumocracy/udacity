@@ -1,0 +1,30 @@
+body{
+	font-family: "Open Sans" sans-serif;
+	color:#333333;
+}
+.center{
+	width:50%;
+	margin:0 auto;
+}
+.image{
+	width:70%;
+	margin: 0 auto;
+	display: block;
+}
+.common_text{
+	margin-bottom: 30px;
+}
+.highlight{
+	font-weight: 700;
+}
+.common_link{
+	color:#000066;
+	text-decoration: underline;
+	text-decoration-color: #ccccff;
+}
+.note{
+	border-top: 1px solid darkgrey;
+}
+.italic{
+	font-style: italic;
+}

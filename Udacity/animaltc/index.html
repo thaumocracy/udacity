@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Animal Trading Cards</title>
+	<link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,400i,700" rel="stylesheet">
+</head>
+<body>
+	<div class = "wrapper">
+	 <div class="card">
+		<h3 class = "card__header">The Wolverine</h3>
+		<img src="logan.jpg" alt="Wolverine" class = "logan">
+		<img src="logan2.jpg" alt="Wolverine" class = "logan">
+		<img src="logan3.jpg" alt="Wolverine" class = "logan">
+		<img src="logan4.jpeg" alt="Wolverine" class = "logan">
+		<div class = "card__inner">
+			<p class = "common_text italic">The wolverine, a solitary animal, has a reputation for ferocity and strength out of proportion to its size, with the documented ability to kill prey many times larger than itself.</p>
+			<ul class = "animal_facts">
+				<li class = "animal_fact"><span class="fact_item">Scientific Name:</span><span class="fact_data">Gulo gulo</span></li>
+				<li class = "animal_fact"><span class="fact_item">Average length:</span><span class="fact_data"> 65–107 cm</span></li>
+				<li class = "animal_fact"><span class="fact_item">Average lifespan:</span><span class="fact_data">16 years</span></li>
+                <li class = "animal_fact"><span class="fact_item">Habitat:</span><span class="fact_data">Western Russia , Siberia and Canada</span></li>
+			</ul>
+			<p class = "common_text">Many cities, teams, and organizations use the wolverine as a mascot. For example, the US state of Michigan is, by tradition, known as "the Wolverine State", and the University of Michigan takes the animal as their mascot. The association is well and long established: for example, many Detroiters volunteered to fight during the American Civil War and George Armstrong Custer, who led the Michigan Brigade, called them the "Wolverines".</p>
+		</div>
+	 </div>
+	</div>
+	<script>
+        var slideIndex = 0;
+        showSlides();
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("logan");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 1300);
+        }
+</script>
+</body>
+</html>
