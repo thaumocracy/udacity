@@ -1,2 +1,1 @@
-# udacity
-nanodegree
+# thaumocracy.github.io

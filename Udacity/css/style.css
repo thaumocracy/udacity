@@ -1,0 +1,27 @@
+body{
+	background-color: black;
+}	
+.navbar{
+	width:300px;
+	margin:0 auto;
+	margin-top:300px;
+	background-color: darkgrey;
+	border-radius: 10px;
+}
+.navbar__list{
+	list-style-type: none;
+	padding-left: 0px;
+}
+.navbar__link{
+	display: block;
+	padding:10px 20px;
+	text-decoration:none;
+	color:maroon;
+	text-align: center;
+	font-size:25px;
+	word-wrap: nowrap;
+}
+.navbar__link:hover{
+	background-color: maroon;
+	color:white;
+}
