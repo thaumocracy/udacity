@@ -1,0 +1,162 @@
+/*a comment for serious business*/
+
+body {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.mega__wrapper {
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgb(242, 242, 242);
+    overflow: auto;
+}
+
+.main__head {
+    display: flex;
+    justify-content: space-between;
+    overflow: auto;
+    align-items: center;
+}
+
+.main__head > picture {
+    margin-top: 30px;
+    margin-left: 100px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.head__person {
+    margin-top: 30px;
+    margin-right: 50px;
+}
+
+.name {
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: #02b3e4;
+}
+
+.desc {
+    font-weight: 300;
+    text-decoration: line-through;
+    color:darkgrey;
+}
+
+.main__image > picture > img{
+    box-shadow: 0 10px 8px #888888;
+}
+
+.main__img {
+    width: 100%;
+}
+
+.projects__wrapper {
+    width: 90%;
+    margin: 0 auto 100px;
+}
+.projects__text{
+    display: none;
+}
+.featured__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 1;
+    margin: 0 auto;
+}
+
+.featured__item {
+    width: 30%;
+    text-align: center;
+}
+
+.featured__image > img {
+    width: 100%;
+    border-radius:30px;
+}
+
+.featured__name {
+    text-transform: uppercase;
+}
+
+.featured__link {
+    text-decoration: overline ;
+    text-decoration-color: #02b3e4;
+    color: black;
+    font-size:20px;
+}
+
+.footer__content {
+    margin: 0 auto;
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+@media only screen and (max-width:767px){
+    .mega__wrapper{
+        width:95%;
+    }
+
+    .main__img {
+        display: none;
+    }
+
+    .projects__wrapper {
+        text-align: center;
+    }
+
+    .featured {
+        font-size: 40px;
+    }
+
+    .featured__wrapper {
+        flex-direction: column;
+    }
+
+    .featured__item {
+        width: 50%;
+    }
+
+}
+
+
+@media only screen and (max-width:425px){
+    .mega__wrapper{
+        width:100%;
+    }
+    .main__image > picture {
+        display: none;
+    }
+
+    .desc {
+        display: none;
+    }
+
+    .name {
+        font-size: 50px;
+    }
+
+    .main__head > picture {
+        margin-top: 10px;
+        margin-left: 50px;
+    }
+    .projects__text{
+        font-size:80px;
+        display: block;
+    }
+    .featured {
+        font-size: 60px;
+    }
+
+    .featured__item {
+        width: 80%;
+        font-size: 30px;
+        margin-bottom: 50px;
+    }
+}
