@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio mockup</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -13,7 +13,7 @@
  <div class="mega__wrapper">
      <header class="main__head">
          <picture>
-             <img src="udacity.svg" alt="logo" class="logo">
+             <img src="img/udacity.svg" alt="logo" class="logo">
          </picture>
          <section class="head__person">
              <h1 class="name">Place Holder</h1>
@@ -23,29 +23,40 @@
      <main class="main__content">
          <section class="main__image">
              <picture>
-                 <source media="(max-width:767px)" srcset="code-med.jpg">
-                 <img src="code.jpg" alt="code img" style="width:100%">
+                 <source media="(max-width:767px) and (min-width:426px)"  srcset="img/code-med.jpg">
+                 <source media="(max-width:425px)" srcset="img/code-small.jpg">
+                 <img src="img/code.jpg" alt="code img">
              </picture>
+             <p class="main__text">There is a p element which i guess should be fancy "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labonsequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. st laborum."</p>
          </section>
          <section class="projects__wrapper">
-             <span class="projects__text">Hola. Here is some of my works,no picture,whoo!!</span>
             <h2 class="featured">Featured work</h2>
              <div class="featured__wrapper">
-                 <div class="featured__item">
-                     <picture class="featured__image"><img src="applefy.jpg" alt="first picture"></picture>
-                     <h3 class="featured__name">First</h3>
-                     <a href="#" class="featured__link">github</a>
-                 </div>
-                 <div class="featured__item">
-                     <picture class="featured__image"><img src="sunflower.jpg" alt="second picture"></picture>
-                     <h3 class="featured__name">Second</h3>
-                     <a href="#" class="featured__link">github</a>
-                 </div>
-                 <div class="featured__item">
-                     <picture class="featured__image"><img src="bokeh.png" alt="third picture"></picture>
-                     <h3 class="featured__name">Third</h3>
-                     <a href="#" class="featured__link">github</a>
-                 </div>
+                 <article class="featured__item">
+                     <picture class="featured__image"><img src="img/applefy.jpg" alt="applefy"></picture>
+                     <h3 class="featured__name">Applefy</h3>
+                     <a href="#" class="featured__link">github link</a>
+                 </article>
+                 <article class="featured__item">
+                     <picture class="featured__image"><img src="img/sunflower.jpg" alt="sunflower"></picture>
+                     <h3 class="featured__name">Sunflower</h3>
+                     <a href="#" class="featured__link">github link</a>
+                 </article>
+                 <article class="featured__item">
+                     <picture class="featured__image"><img src="img/bokeh.png" alt="bokeh"></picture>
+                     <h3 class="featured__name">Bokeh</h3>
+                     <a href="#" class="featured__link">github link</a>
+                 </article>
+                 <article class="featured__item">
+                     <picture class="featured__image"><img src="img/unicorn.jpg" alt="unicorn"></picture>
+                     <h3 class="featured__name">Unicorn</h3>
+                     <a href="#" class="featured__link">github link</a>
+                 </article>
+                 <article class="featured__item">
+                     <picture class="featured__image"><img src="img/flower.jpg" alt="flower"></picture>
+                     <h3 class="featured__name">Flower</h3>
+                     <a href="#" class="featured__link">github link</a>
+                 </article>
              </div>
          </section>
      </main>

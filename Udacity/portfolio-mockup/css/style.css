@@ -8,7 +8,7 @@ body {
 .mega__wrapper {
     width: 80%;
     margin: 0 auto;
-    background-color: rgb(242, 242, 242);
+    background: rgb(242, 242, 242);
     overflow: auto;
 }
 
@@ -43,30 +43,36 @@ body {
 .desc {
     font-weight: 300;
     text-decoration: line-through;
-    color:darkgrey;
+    color: darkgrey;
 }
 
 .main__image > picture > img{
-    box-shadow: 0 10px 8px #888888;
+    box-shadow: 0 10px 8px #888;
+    width:100%;
 }
 
 .main__img {
     width: 100%;
 }
-
+.main__text{
+    text-align: center;
+    font: 30px italic;
+    text-shadow: 4px 4px #02b3e4;
+    width: 70%;
+    margin: 50px auto;
+}
 .projects__wrapper {
     width: 90%;
     margin: 0 auto 100px;
 }
-.projects__text{
-    display: none;
-}
+
 .featured__wrapper {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
-    flex-shrink: 1;
     margin: 0 auto;
+    flex-wrap: wrap;
+    flex-grow: 1;
 }
 
 .featured__item {
@@ -87,7 +93,7 @@ body {
     text-decoration: overline ;
     text-decoration-color: #02b3e4;
     color: black;
-    font-size:20px;
+    font-size: 20px;
 }
 
 .footer__content {
@@ -103,8 +109,8 @@ body {
         width:95%;
     }
 
-    .main__img {
-        display: none;
+    .main__text{
+        font-size:50px;
     }
 
     .projects__wrapper {
@@ -122,6 +128,9 @@ body {
     .featured__item {
         width: 50%;
     }
+    .footer_text{
+        font-size:70px;
+    }
 
 }
 
@@ -130,21 +139,20 @@ body {
     .mega__wrapper{
         width:100%;
     }
-    .main__image > picture {
-        display: none;
-    }
 
-    .desc {
-        display: none;
-    }
 
     .name {
         font-size: 50px;
     }
-
+    .main__image > picture > img{
+        width:100%;
+    }
     .main__head > picture {
         margin-top: 10px;
         margin-left: 50px;
+    }
+    .main__text{
+        font-size:50px;
     }
     .projects__text{
         font-size:80px;
@@ -158,5 +166,9 @@ body {
         width: 80%;
         font-size: 30px;
         margin-bottom: 50px;
+    }
+
+    .footer_text{
+        font-size:50px;
     }
 }
