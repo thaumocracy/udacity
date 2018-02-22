@@ -1,12 +1,12 @@
 /*a comment for serious business*/
 
 body {
-    width: 1280px;
     margin: 0 auto;
+    font-size:20px;
 }
 
 .mega__wrapper {
-    width: 80%;
+    width: 70%;
     margin: 0 auto;
     background: rgb(242, 242, 242);
     overflow: auto;
@@ -72,7 +72,7 @@ body {
     align-items: center;
     margin: 0 auto;
     flex-wrap: wrap;
-    flex-grow: 1;
+    flex-shrink: 1;
 }
 
 .featured__item {
@@ -108,17 +108,27 @@ body {
     .mega__wrapper{
         width:95%;
     }
-
-    .main__text{
-        font-size:50px;
+    .logo {
+        width: 40px;
+        height: 40px;
     }
-
+    .main__text{
+        font-size:30px;
+    }
+    .main__head > picture {
+        margin-top: 25px;
+        margin-left: 40px;
+    }
+    .head__person{
+        margin-right: 25px;
+        margin-top: 40px;
+    }
     .projects__wrapper {
         text-align: center;
     }
 
     .featured {
-        font-size: 40px;
+        font-size: 30px;
     }
 
     .featured__wrapper {
@@ -129,7 +139,7 @@ body {
         width: 50%;
     }
     .footer_text{
-        font-size:70px;
+        font-size:40px;
     }
 
 }
@@ -140,35 +150,44 @@ body {
         width:100%;
     }
 
-
-    .name {
-        font-size: 50px;
+    .logo {
+        width: 20px;
+        height: 20px;
     }
+    .name,
+    .desc{
+        font-size: 20px;
+    }
+
     .main__image > picture > img{
         width:100%;
     }
     .main__head > picture {
         margin-top: 10px;
-        margin-left: 50px;
+        margin-left: 15px;
+    }
+    .head__person{
+        margin-right:15px;
+        margin-top:10px;
     }
     .main__text{
-        font-size:50px;
+        font-size:18px;
     }
     .projects__text{
         font-size:80px;
         display: block;
     }
     .featured {
-        font-size: 60px;
+        font-size: 30px;
     }
 
     .featured__item {
         width: 80%;
-        font-size: 30px;
+        font-size: 20px;
         margin-bottom: 50px;
     }
 
     .footer_text{
-        font-size:50px;
+        font-size:30px;
     }
 }
