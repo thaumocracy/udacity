@@ -14,11 +14,13 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 body {
     background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
+    overflow: auto;
 }
 
 .container {
@@ -106,4 +108,38 @@ h1 {
 .score-panel .restart {
     float: right;
     cursor: pointer;
+}
+.timer{
+    display: inline-block;
+    text-align: right;
+    margin-left:20%;
+}
+
+.pop_up{
+    width: 100%;
+    margin:0 auto;
+    display: none;
+    position: absolute;
+    top:-400px;
+}
+.pop_up_content{
+    width:600px;
+    margin:0 auto;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    background-color: cornflowerblue;
+    animation: popUpDrop 1s ease forwards;
+}
+.pop_up_content > * {
+    vertical-align: top;
+    text-align: center;
+}
+.content_link{
+    padding:20px 30px;
+}
+@keyframes popUpDrop {
+    0%{}
+    75%{transform:translateY(730px)}
+    100%{transform:translateY(700px)}
 }

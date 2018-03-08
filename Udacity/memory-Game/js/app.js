@@ -5,32 +5,57 @@
 document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM LOADED');
     cardReset();
+    tryScore.innerHTML = 0;
+    document.querySelector('.timer').style.visibility = 'hidden';
 });
 
 let cards = document.querySelectorAll('.card');
 let compareArray = [];
 let classList = [];
+let winCounter = 0;
+let loseCounter = 0;
+let tryScore = document.querySelector('.moves');
+let timeMin = document.querySelector('.min');
+let timeSec = document.querySelector('.sec');
+let timeMinutes = 0;
+let timeSeconds = 0;
+let start = false;
+let stars = document.querySelectorAll('.stars li');
+
+
+function starsCheck(){
+    if((loseCounter > 5)&&(loseCounter < 7)){ stars[0].style.visibility = 'hidden';}
+    else if ((loseCounter > 7)&&(loseCounter < 13)){ stars[1].style.visibility = 'hidden';}
+    else if (loseCounter > 15){ stars[2].style.visibility = 'hidden';}
+}
+
 
 function deckSearch() {
     let cards = document.querySelectorAll('.card');
     for (let card of cards) {
         card.addEventListener('click', function (event) {
-            if(event.target.classList.contains('match')){
-
-            }
+            if(event.target.classList.contains('match')){}
             else{
                 event.target.classList.toggle('match');
                 compareArray.push(event.target);
-                console.log(compareArray);
                 checkout();
             }
-
         })
     }
 }
 
-function checkout(){
+function youWon (){
+    if(winCounter === 8){
+        document.querySelector('.pop_up').style.display = 'flex';
+    }
+}
 
+function checkout(){
+        if((compareArray[0].classList.contains('show') || (compareArray[1].classList.contains('show')))){
+            compareArray[0].classList.remove('match');
+            compareArray[1].classList.remove('match');
+            compareArray = [];
+        }
         if(compareArray.length > 2){
             for(let i = 0;i < compareArray.length;i++){
                 compareArray[i].classList.remove('match');
@@ -38,37 +63,44 @@ function checkout(){
             compareArray = [];
         }
         else if(compareArray.length === 2) {
+
             if(compareArray[0].innerHTML === compareArray[1].innerHTML){
-                console.log('!EVEN!');
+
+                winCounter = winCounter + 1 ;
+                tryScore.innerHTML = loseCounter + winCounter;
                 compareArray[0].classList.add('open', 'show');
                 compareArray[0].classList.remove('match');
                 compareArray[1].classList.add('open', 'show');
                 compareArray[1].classList.remove('match');
                 compareArray = [];
 
-        }
-        else{
-            setTimeout(notEvenColor,500);
-        }
-    }
 
+            }
+            else {
+            setTimeout(notEvenColor,300);
+            }
+        }
+        starsCheck();
+        youWon();
 }
 
-        function notEvenColor() {
-                compareArray[0].classList.remove('match');
-                compareArray[1].classList.remove('match');
-                compareArray = [];
-                console.log('False');
-        }
+function notEvenColor() {
+        compareArray[0].classList.remove('match');
+        compareArray[1].classList.remove('match');
+        compareArray = [];
+        console.log('False');
+        loseCounter = loseCounter + 1;
+        tryScore.innerHTML = loseCounter + winCounter;
+}
 
-        function restart() {
-            let restart = document.querySelector('.restart');
-            restart.addEventListener('click',function(){
-                resetDeck();
-            })
-        }
+function restart() {
+    let restart = document.querySelector('.restart');
+    restart.addEventListener('click',function(){
+        resetDeck();
+    });
+    setInterval(timer,1000);
 
-
+}
 
 function cardReset(){
     let cards = document.querySelectorAll('.card');
@@ -77,8 +109,6 @@ function cardReset(){
     let items = document.querySelectorAll('.card > i');
     let itemsArr = [];
     restart();
-
-
 
     function createDeck() {
         for (let i = 0; i < cards.length; i++) {
@@ -93,19 +123,21 @@ function cardReset(){
     }
     createDeck();
     shuffle(classList);
-
         for(let i = 0;i < items.length;i++){
             itemsArr.push(items[i]);
             this.classList = 'fa ' + classList[i];
         }
-    console.log(cardsStack);
-    console.log(classList);
-    console.log(itemsArr);
 }
 
 
 function resetDeck(){
+    document.querySelector('.timer').style.visibility = 'visible';
     shuffle(classList);
+    tryScore.innerHTML = 0;
+    timeSeconds = 0;
+    timeMinutes = 0;
+    winCounter = 0;
+    loseCounter = 0;
     let cardList = document.querySelector('.deck');
         cardList.innerHTML = '';
 
@@ -121,6 +153,16 @@ function resetDeck(){
         deckSearch();
 }
 
+function timer (){
+    if(timeSeconds > 60){
+        timeSeconds = 0;
+        timeMinutes++;
+    } else{
+        timeSeconds++;
+    }
+   timeMin.textContent = timeMinutes;
+   timeSec.textContent = timeSeconds;
+}
 
 
 
