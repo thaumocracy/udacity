@@ -21,12 +21,13 @@ let timeMinutes = 0;
 let timeSeconds = 0;
 let start = false;
 let stars = document.querySelectorAll('.stars li');
+let starsCounter = 3;
 
 
 function starsCheck(){
-    if((loseCounter > 5)&&(loseCounter < 7)){ stars[0].style.visibility = 'hidden';}
-    else if ((loseCounter > 7)&&(loseCounter < 13)){ stars[1].style.visibility = 'hidden';}
-    else if (loseCounter > 15){ stars[2].style.visibility = 'hidden';}
+    if((loseCounter > 5)&&(loseCounter < 7)){ stars[0].style.visibility = 'hidden'; starsCounter = 2}
+    else if ((loseCounter > 7)&&(loseCounter < 13)){ stars[1].style.visibility = 'hidden';starsCounter = 1}
+    else if (loseCounter > 15){ stars[2].style.visibility = 'hidden';starsCounter = 0}
 }
 
 
@@ -45,13 +46,23 @@ function deckSearch() {
 }
 
 function youWon (){
+    let finStars = document.querySelector('.finStars');
+    let finMoves = document.querySelector('.finMoves');
+    let finTime = document.querySelector('.finTime');
+    let aStar = '<i class="fa fa-star"></i>';
     if(winCounter === 8){
         document.querySelector('.pop_up').style.display = 'flex';
+        finStars.innerHTML = aStar.repeat(starsCounter);
+        finMoves.textContent = 'Your Moves ' + ' : '  + (loseCounter + winCounter);
+        finTime.textContent = 'Your time ' + (timeMinutes + ' : ' + timeSeconds);
     }
 }
 
 function checkout(){
-        if((compareArray[0].classList.contains('show') || (compareArray[1].classList.contains('show')))){
+        if(compareArray.length < 2){
+
+        }
+        else if((compareArray[0].classList.contains('show') || (compareArray[1].classList.contains('show')))){
             compareArray[0].classList.remove('match');
             compareArray[1].classList.remove('match');
             compareArray = [];
@@ -85,20 +96,30 @@ function checkout(){
 }
 
 function notEvenColor() {
+    if(compareArray.length < 2){
+
+    }
+    else {
         compareArray[0].classList.remove('match');
         compareArray[1].classList.remove('match');
         compareArray = [];
-        console.log('False');
         loseCounter = loseCounter + 1;
         tryScore.innerHTML = loseCounter + winCounter;
+    }
 }
 
 function restart() {
     let restart = document.querySelector('.restart');
+    let button = document.querySelector('.content_link');
     restart.addEventListener('click',function(){
         resetDeck();
     });
+    button.addEventListener('click',function(){
+        resetDeck();
+        document.querySelector('.pop_up').style.display = 'none';
+    });
     setInterval(timer,1000);
+    starsCounter = 3;
 
 }
 
@@ -109,7 +130,6 @@ function cardReset(){
     let items = document.querySelectorAll('.card > i');
     let itemsArr = [];
     restart();
-
     function createDeck() {
         for (let i = 0; i < cards.length; i++) {
             cards[i].classList = 'card';
@@ -154,7 +174,10 @@ function resetDeck(){
 }
 
 function timer (){
-    if(timeSeconds > 60){
+    if(winCounter >= 8){
+
+    }
+    else if(timeSeconds > 60){
         timeSeconds = 0;
         timeMinutes++;
     } else{

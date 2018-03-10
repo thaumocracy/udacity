@@ -120,10 +120,11 @@ h1 {
     margin:0 auto;
     display: none;
     position: absolute;
-    top:-400px;
+    top:200px;
 }
 .pop_up_content{
-    width:600px;
+    border-radius: 30px;
+    width:700px;
     margin:0 auto;
     display: flex;
     text-align: center;
@@ -135,11 +136,22 @@ h1 {
     vertical-align: top;
     text-align: center;
 }
+.content_list{
+    list-style-type: none;
+    margin-left:50px;
+    font-size: 20px;
+}
 .content_link{
-    padding:20px 30px;
+    border:none;
+    outline: none;
+    padding:10px 20px;
+    border-radius: 0 15px 15px 0;
+    background-color: limegreen;
+    font-size:25px;
+    font-weight: normal;
 }
-@keyframes popUpDrop {
-    0%{}
-    75%{transform:translateY(730px)}
-    100%{transform:translateY(700px)}
-}
+/*@keyframes popUpDrop {*/
+    /*0%{}*/
+    /*75%{transform:translateY(730px)}*/
+    /*100%{transform:translateY(700px)}*/
+/*}*/
