@@ -2,11 +2,13 @@ html {
     box-sizing: border-box;
 }
 
+
 *,
 *::before,
 *::after {
     box-sizing: inherit;
 }
+
 
 html,
 body {
@@ -17,11 +19,13 @@ body {
     position: relative;
 }
 
+
 body {
     background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
     overflow: auto;
 }
+
 
 .container {
     display: flex;
@@ -30,14 +34,17 @@ body {
     flex-direction: column;
 }
 
+
 h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
 }
 
+
 /*
  * Styles for the deck of cards
  */
+
 
 .deck {
     width: 660px;
@@ -53,12 +60,13 @@ h1 {
     margin: 0 0 3em;
 }
 
+
 .deck .card {
     height: 125px;
     width: 125px;
     background: #2e3d49;
     font-size: 0;
-    color: #ffffff;
+    color: #fff;
     border-radius: 8px;
     cursor: pointer;
     display: flex;
@@ -67,15 +75,18 @@ h1 {
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
+
 .deck .card.open {
     transform: rotateY(0);
     background: #02b3e4;
     cursor: default;
 }
 
+
 .deck .card.show {
     font-size: 33px;
 }
+
 
 .deck .card.match {
     cursor: default;
@@ -83,15 +94,18 @@ h1 {
     font-size: 33px;
 }
 
+
 /*
  * Styles for the Score Panel
  */
+
 
 .score-panel {
     text-align: left;
     width: 345px;
     margin-bottom: 10px;
 }
+
 
 .score-panel .stars {
     margin: 0;
@@ -100,58 +114,73 @@ h1 {
     margin: 0 5px 0 0;
 }
 
+
 .score-panel .stars li {
     list-style: none;
     display: inline-block;
 }
 
+
 .score-panel .restart {
     float: right;
     cursor: pointer;
 }
-.timer{
+
+
+.timer {
     display: inline-block;
     text-align: right;
-    margin-left:20%;
+    margin-left: 20%;
 }
+/*Pop Up*/
 
-.pop_up{
+.pop_up {
     width: 100%;
-    margin:0 auto;
+    margin: 0 auto;
     display: none;
     position: absolute;
-    top:200px;
+    top: -400px;
 }
-.pop_up_content{
+
+
+.pop_up_content {
     border-radius: 30px;
-    width:700px;
-    margin:0 auto;
+    width: 700px;
+    margin: 0 auto;
     display: flex;
     text-align: center;
     justify-content: space-between;
     background-color: cornflowerblue;
     animation: popUpDrop 1s ease forwards;
 }
+
+
 .pop_up_content > * {
     vertical-align: top;
     text-align: center;
 }
-.content_list{
+
+
+.content_list {
     list-style-type: none;
-    margin-left:50px;
+    margin-left: 50px;
     font-size: 20px;
 }
-.content_link{
-    border:none;
+
+
+.content_link {
+    border: none;
     outline: none;
-    padding:10px 20px;
+    padding: 10px 20px;
     border-radius: 0 15px 15px 0;
     background-color: limegreen;
-    font-size:25px;
+    font-size: 25px;
     font-weight: normal;
 }
-/*@keyframes popUpDrop {*/
-    /*0%{}*/
-    /*75%{transform:translateY(730px)}*/
-    /*100%{transform:translateY(700px)}*/
-/*}*/
+/*Pop Up*/
+
+@keyframes popUpDrop {
+    0%{}
+    75% { transform: translateY( 730px)}
+    100%{ transform: translateY( 700px)}
+}

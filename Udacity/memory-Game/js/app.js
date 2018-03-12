@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM LOADED');
     cardReset();
     tryScore.innerHTML = 0;
-    document.querySelector('.timer').style.visibility = 'hidden';
+    timeVis.style.visibility = 'hidden';
 });
 
 let cards = document.querySelectorAll('.card');
@@ -15,11 +15,11 @@ let classList = [];
 let winCounter = 0;
 let loseCounter = 0;
 let tryScore = document.querySelector('.moves');
+let timeVis = document.querySelector('.timer');
 let timeMin = document.querySelector('.min');
 let timeSec = document.querySelector('.sec');
 let timeMinutes = 0;
 let timeSeconds = 0;
-let start = false;
 let stars = document.querySelectorAll('.stars li');
 let starsCounter = 3;
 
@@ -33,62 +33,64 @@ function starsCheck(){
 
 function deckSearch() {
     let cards = document.querySelectorAll('.card');
-    for (let card of cards) {
-        card.addEventListener('click', function (event) {
-            if(event.target.classList.contains('match')){}
-            else{
-                event.target.classList.toggle('match');
-                compareArray.push(event.target);
-                checkout();
-            }
-        })
-    }
+        for (let card of cards) {
+            card.addEventListener('click', function (event) {
+                if(event.target.classList.contains('match')){}
+                else{
+                    event.target.classList.toggle('match');
+                    compareArray.push(event.target);
+                    checkout();
+                }
+            })
+        }
 }
 
 function youWon (){
+
     let finStars = document.querySelector('.finStars');
     let finMoves = document.querySelector('.finMoves');
     let finTime = document.querySelector('.finTime');
     let aStar = '<i class="fa fa-star"></i>';
-    if(winCounter === 8){
-        document.querySelector('.pop_up').style.display = 'flex';
-        finStars.innerHTML = aStar.repeat(starsCounter);
-        finMoves.textContent = 'Your Moves ' + ' : '  + (loseCounter + winCounter);
-        finTime.textContent = 'Your time ' + (timeMinutes + ' : ' + timeSeconds);
-    }
+
+        if(winCounter === 8){
+            document.querySelector('.pop_up').style.display = 'flex';
+            finStars.innerHTML = aStar.repeat(starsCounter);
+            finMoves.textContent = 'Your Moves ' + ' : '  + (loseCounter + winCounter);
+            finTime.textContent = 'Your time ' + (timeMinutes + ' : ' + timeSeconds);
+        }
 }
 
 function checkout(){
-        if(compareArray.length < 2){
-
-        }
+    timeVis.style.visibility = 'visible';
+        if(compareArray.length < 2){}
         else if((compareArray[0].classList.contains('show') || (compareArray[1].classList.contains('show')))){
             compareArray[0].classList.remove('match');
             compareArray[1].classList.remove('match');
             compareArray = [];
         }
         if(compareArray.length > 2){
+
             for(let i = 0;i < compareArray.length;i++){
                 compareArray[i].classList.remove('match');
             }
+
             compareArray = [];
         }
         else if(compareArray.length === 2) {
 
             if(compareArray[0].innerHTML === compareArray[1].innerHTML){
-
                 winCounter = winCounter + 1 ;
                 tryScore.innerHTML = loseCounter + winCounter;
-                compareArray[0].classList.add('open', 'show');
+                compareArray[0].classList.add('open', 'show','flip');
                 compareArray[0].classList.remove('match');
-                compareArray[1].classList.add('open', 'show');
+                compareArray[1].classList.add('open', 'show','flip');
                 compareArray[1].classList.remove('match');
                 compareArray = [];
 
 
             }
             else {
-            setTimeout(notEvenColor,300);
+            setTimeout(notEvenColor,150);
             }
         }
         starsCheck();
@@ -96,15 +98,13 @@ function checkout(){
 }
 
 function notEvenColor() {
-    if(compareArray.length < 2){
-
-    }
+    if(compareArray.length < 2){}
     else {
+        loseCounter = loseCounter + 1;
+        tryScore.innerHTML = loseCounter + winCounter;
         compareArray[0].classList.remove('match');
         compareArray[1].classList.remove('match');
         compareArray = [];
-        loseCounter = loseCounter + 1;
-        tryScore.innerHTML = loseCounter + winCounter;
     }
 }
 
@@ -133,7 +133,7 @@ function cardReset(){
     function createDeck() {
         for (let i = 0; i < cards.length; i++) {
             cards[i].classList = 'card';
-
+            cards[i].classList.add('animated');
             currentClass = cards[i].firstElementChild.classList;
             currentClass = currentClass[1];
             cardsStack.push(cards[i]);
@@ -167,16 +167,16 @@ function resetDeck(){
             listContent.classList.add('fa');
             listContent.classList.add(classList[i]);
             listItem.classList.add('card');
+            listItem.classList.add('animated');
             listItem.appendChild(listContent);
             cardList.appendChild(listItem);
         }
+
         deckSearch();
 }
 
 function timer (){
-    if(winCounter >= 8){
-
-    }
+    if(winCounter >= 8){}
     else if(timeSeconds > 60){
         timeSeconds = 0;
         timeMinutes++;
@@ -187,9 +187,6 @@ function timer (){
    timeSec.textContent = timeSeconds;
 }
 
-
-
-
 /*
  * Display the cards on the page
  *   - shuffle the list of cards using the provided "shuffle" method below
@@ -199,7 +196,7 @@ function timer (){
 
 // Shuffle function from http://stackoverflow.com/a/2450976
 function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
+    let currentIndex = array.length, temporaryValue, randomIndex;
 
     while (currentIndex !== 0) {
         randomIndex = Math.floor(Math.random() * currentIndex);
@@ -211,7 +208,6 @@ function shuffle(array) {
 
     return array;
 }
-
 
 /*
  * set up the event listener for a card. If a card is clicked:
