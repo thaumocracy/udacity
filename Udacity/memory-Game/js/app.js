@@ -61,6 +61,9 @@ function youWon (){
 }
 
 function checkout(){
+    /*making timer visible on first click
+    then adding a picked cards to massive to compare them
+    */
     timeVis.style.visibility = 'visible';
         if(compareArray.length < 2){}
         else if((compareArray[0].classList.contains('show') || (compareArray[1].classList.contains('show')))){
@@ -93,6 +96,7 @@ function checkout(){
             setTimeout(notEvenColor,150);
             }
         }
+        //checking your stars rating and won you or not
         starsCheck();
         youWon();
 }
@@ -107,7 +111,6 @@ function notEvenColor() {
         compareArray = [];
     }
 }
-
 function restart() {
     let restart = document.querySelector('.restart');
     let button = document.querySelector('.content_link');
@@ -149,7 +152,7 @@ function cardReset(){
         }
 }
 
-
+//flush everything
 function resetDeck(){
     document.querySelector('.timer').style.visibility = 'visible';
     shuffle(classList);
