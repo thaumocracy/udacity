@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     console.log('DOM LOADED');
     cardReset();
     tryScore.innerHTML = 0;
-    timeVis.style.visibility = 'hidden';
 });
 
 let cards = document.querySelectorAll('.card');
@@ -20,6 +19,7 @@ let timeMin = document.querySelector('.min');
 let timeSec = document.querySelector('.sec');
 let timeMinutes = 0;
 let timeSeconds = 0;
+let start = false;
 let stars = document.querySelectorAll('.stars li');
 let starsCounter = 3;
 
@@ -27,7 +27,6 @@ let starsCounter = 3;
 function starsCheck(){
     if((loseCounter > 5)&&(loseCounter < 7)){ stars[0].style.visibility = 'hidden'; starsCounter = 2}
     else if ((loseCounter > 7)&&(loseCounter < 13)){ stars[1].style.visibility = 'hidden';starsCounter = 1}
-    else if (loseCounter > 15){ stars[2].style.visibility = 'hidden';starsCounter = 0}
 }
 
 
@@ -64,7 +63,7 @@ function checkout(){
     /*making timer visible on first click
     then adding a picked cards to massive to compare them
     */
-    timeVis.style.visibility = 'visible';
+    start = true;
         if(compareArray.length < 2){}
         else if((compareArray[0].classList.contains('show') || (compareArray[1].classList.contains('show')))){
             compareArray[0].classList.remove('match');
@@ -123,7 +122,6 @@ function restart() {
     });
     setInterval(timer,1000);
     starsCounter = 3;
-
 }
 
 function cardReset(){
@@ -161,6 +159,11 @@ function resetDeck(){
     timeMinutes = 0;
     winCounter = 0;
     loseCounter = 0;
+    start = false;
+    compareArray = [];
+    for(let i = 0; i < stars.length;i++){
+        stars[i].style.visibility = 'visible';
+    }
     let cardList = document.querySelector('.deck');
         cardList.innerHTML = '';
 
@@ -174,18 +177,20 @@ function resetDeck(){
             listItem.appendChild(listContent);
             cardList.appendChild(listItem);
         }
-
         deckSearch();
 }
 
-function timer (){
-    if(winCounter >= 8){}
-    else if(timeSeconds > 60){
-        timeSeconds = 0;
-        timeMinutes++;
-    } else{
-        timeSeconds++;
+function timer () {
+    if (winCounter >= 8) {
     }
+    else if (start === true) {
+        if (timeSeconds > 60) {
+            timeSeconds = 0;
+            timeMinutes++;
+        } else {
+            timeSeconds++;
+        }
+}
    timeMin.textContent = timeMinutes;
    timeSec.textContent = timeSeconds;
 }
