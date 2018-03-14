@@ -20,7 +20,6 @@ Download or clone repository , then run index.html
 Rules are simple :
     You flip 2 cards,if they match - they lock,if they don't - they close.
     For wrong matches you lose star rating at some point.
-
     With all cards matched right - congratz,you won.
 
 ## Contributing
