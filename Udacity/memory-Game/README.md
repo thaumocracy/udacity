@@ -1,16 +1,28 @@
 # Memory Game Project
 
 ## Table of Contents
-
+* [Memory-Game](#Memory-Game)
 * [Instructions](#instructions)
+* [Rules](#Rules)
 * [Contributing](#contributing)
+
+
+## Memory-Game
+
+Memory-Game is simple game written in vanilla js for learning purposes , but still playable.
 
 ## Instructions
 
-Download,play. Don't break.
+Download or clone repository , then run index.html
 
-Srsly that is hardest part,game is simple beyond measures and have no dependencies. >_<
-ノ┬─┬ノ ︵ ( \o°o)\
+## Rules
+
+Rules are simple :
+    You flip 2 cards,if they match - they lock,if they don't - they close.
+    For wrong matches you lose star rating at some point.
+
+    With all cards matched right - congratz,you won.
+
 ## Contributing
 
-Pls don't for now.
+Its a learning project,so i would appreciate pull requests.

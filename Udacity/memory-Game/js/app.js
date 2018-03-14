@@ -34,7 +34,7 @@ function deckSearch() {
     let cards = document.querySelectorAll('.card');
         for (let card of cards) {
             card.addEventListener('click', function (event) {
-                if(event.target.classList.contains('match')){}
+                if(event.target.classList.contains('match') || this !== event.target){}
                 else{
                     event.target.classList.toggle('match');
                     compareArray.push(event.target);
