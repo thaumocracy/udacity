@@ -1,0 +1,73 @@
+body {
+    text-align: center;
+    background: radial-gradient(hotpink,white,deeppink);
+}
+
+.pony{
+    width:200px;
+}
+.pony0{
+    position: absolute;
+    right:50px;
+    top:50px;
+}
+.pony1{
+     position: absolute;
+     left:50px;
+     top:50px;
+ }
+.pony2{
+    position: absolute;
+    left:50px;
+    bottom:50px;
+}
+.pony3{
+    position: absolute;
+    right:50px;
+    bottom:50px;
+}
+.heresy{
+    position: absolute;
+    top:20px; left:350px;
+    transform: rotate(-20deg);
+}
+.reward__container{
+    display: none;
+    width:100%;
+    margin:0 auto;
+    text-align: center;
+    position: relative;
+    background:rgba(0,0,0,0.5);
+}
+.modal{
+    width:80%;
+    height:600px;
+    margin:0 auto;
+    position: absolute;
+    left:270px;
+    top:100px;
+    background:rgba(0,0,0,0.8);
+    z-index: 1;
+    color:white;
+    font-size:30px;
+}
+.restart{
+    width:300px;
+    font-size:30px;
+    margin: 0 auto;
+    padding:50px 30px;
+    margin-top:100px;
+    background: radial-gradient(#52c234, #061700);
+    color:goldenrod;
+    border: none;
+    border-radius:50%;
+}
+
+.score__button{
+    outline: none;
+    border:none;
+    border-radius:10px;
+    padding:10px 20px;
+    color:white;
+    background: linear-gradient(to left, #ff00cc, #333399);
+}
