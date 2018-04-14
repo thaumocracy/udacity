@@ -1,7 +1,7 @@
 # Memory Game Project
 
 ## Table of Contents
-* [Memory-Game](#Memory-Game)
+* [Frogger-Game](#Frogger-Game)
 * [Instructions](#instructions)
 * [Rules](#Rules)
 * [Contributing](#contributing)
@@ -9,7 +9,7 @@
 
 ## Memory-Game
 
-Memory-Game is simple game written in vanilla js for learning purposes , but still playable.
+Frogger is simple game written in vanilla js for learning purposes , but still playable.
 
 ## Instructions
 
@@ -17,10 +17,10 @@ Download or clone repository , then run index.html
 
 ## Rules
 
-Rules are simple :
-    You flip 2 cards,if they match - they lock,if they don't - they close.
-    For wrong matches you lose star rating at some point.
-    With all cards matched right - congratz,you won.
+Rules:
+
+    Use keyboard arrows to move,goal is to loot 9 hearts.
+    hint : bugs are bad.
 
 ## Contributing
 
