@@ -51,12 +51,15 @@ class Player {
         this.x = 500;
         this.y = 630;
     }
+
     handleInput(e) {
         this.key = e;
     }
 
 }
+
 class Item {
+
     constructor(){
         this.x = getRandomNumber(1,10)*100;
         this.y = getRandomNumber(3,10)*75;
@@ -68,6 +71,7 @@ class Item {
         this.y = (getRandomNumber(1,9)*75);
 
     }
+
     render(){
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
     }
@@ -78,9 +82,12 @@ let player = new Player();
 let item = new Item();
 
 for (let i = 0; i < 15; i++) {
+
     let randomSpeed = getRandomNumber(1, 25) * 10;
     let randomRow = getRandomNumber(1, 6);
+
     allEnemies[i] = new Enemy(randomRow, randomSpeed);
+
 }
 
 function getRandomNumber(min, max) {
@@ -88,21 +95,28 @@ function getRandomNumber(min, max) {
 }
 
 document.addEventListener('keyup', function(e) {
+
     let allowedKeys = {
         37: 'left',
         38: 'up',
         39: 'right',
         40: 'down'
     };
+
     player.handleInput(allowedKeys[e.keyCode]);
+
 });
+
 let modal = document.querySelector('.reward__container');
 let modalButton = document.querySelector('.restart');
+let scoreButton = document.querySelector('.score__button');
+
 modalButton.addEventListener('click',function(){
     modal.style.display = 'none';
     player.score = 0;
     player.reset();
     item.reset();
 });
-let scoreButton = document.querySelector('.score__button');
+
+
 
